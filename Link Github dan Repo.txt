@@ -1,0 +1,5 @@
+Streamlit App:
+https://keexkfot8btbvfpzr6zhep.streamlit.app/
+
+Github Repo:
+https://github.com/kucingterbangg/UTS-Model-Deployment
