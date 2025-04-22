@@ -1,3 +1,5 @@
+# link video = https://drive.google.com/drive/folders/136ABi3Ju191lqCTVlzZG7UYQqJPCLw5P?usp=sharing
+
 """import the needed libraries"""
 import pandas as pd
 import numpy as np

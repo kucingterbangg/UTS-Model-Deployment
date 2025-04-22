@@ -1,3 +1,5 @@
+# link video = https://drive.google.com/drive/folders/136ABi3Ju191lqCTVlzZG7UYQqJPCLw5P?usp=sharing
+
 import streamlit as st
 import joblib
 import numpy as np
@@ -19,15 +21,16 @@ def main():
         st.header("Biodata")
         col1, col2 = st.columns(2)
         with col1:
-            person_age = st.number_input('Age', min_value=20, max_value=100, value=30)
+            #min max value follows df.describe() function (statistical summary)
+            person_age = st.number_input('Age', min_value=20, max_value=144, value=20)
             person_gender = st.radio('Gender', ['male', 'female'])
             person_education = st.selectbox('Education Level', [
                 'High School', 'Associate', 'Bachelor', 'Master', 'Doctorate'
             ])
             
         with col2:
-            person_income = st.number_input('Annual Income ($)', min_value=0, value=50000)
-            person_emp_exp = st.number_input('Employment Experience (years)', min_value=0, max_value=50, value=5)
+            person_income = st.number_input('Annual Income', min_value=0, value=0)
+            person_emp_exp = st.number_input('Employment Experience (years)', min_value=0, max_value=125, value=5)
             person_home_ownership = st.selectbox('Home Ownership', [
                 'RENT', 'OWN', 'MORTGAGE', 'OTHER'
             ])
@@ -35,19 +38,19 @@ def main():
         st.header("Loan Details")
         col3, col4 = st.columns(2)
         with col3:
-            loan_amnt = st.number_input('Loan Amount ($)', min_value=0, max_value=100000, value=10000)
+            loan_amnt = st.number_input('Loan Amount', min_value=500, max_value=35000, value=500)
             loan_intent = st.selectbox('Loan Purpose', [
                 'EDUCATION', 'MEDICAL', 'VENTURE', 'PERSONAL', 
                 'DEBTCONSOLIDATION', 'HOMEIMPROVEMENT'
             ])
-            loan_int_rate = st.number_input('Interest Rate (%)', min_value=5.0, max_value=30.0, value=10.0)
+            loan_int_rate = st.number_input('Interest Rate (%)', min_value=5.42, max_value=20.0, value=5.42)
             
         with col4:
-            loan_percent_income = st.slider('Loan Percentage of Income', min_value=0.0, max_value=1.0, value=0.3)
-            cred_hist_length = st.number_input('Credit History Length (years)', min_value=0, max_value=50, value=3)
+            loan_percent_income = st.slider('Loan Percentage of Income', min_value=0.0, max_value=0.66, value=0.0)
+            cred_hist_length = st.number_input('Credit History Length (years)', min_value=2, max_value=30, value=2)
             previous_defaults = st.radio('Previous Loan Defaults', ['No', 'Yes'])
         
-        credit_score = st.slider('Credit Score', min_value=300, max_value=850, value=650)
+        credit_score = st.slider('Credit Score', min_value=390, max_value=850, value=390)
         
         submitted = st.form_submit_button("Predict Loan Status")
     
